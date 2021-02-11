@@ -1,6 +1,7 @@
 package coinbase
 
 import "time"
+
 // ACharge is a class hosted inside the APIClient providing methods about charge
 type ACharge struct {
 	Api *APIClient
@@ -9,7 +10,7 @@ type ACharge struct {
 // APIChargeData is the golang struct equivalent of the Charge resource. It's findable inside APICharge object
 type APIChargeData struct {
 	Id           string     `json:"id,omitempty"`
-	Ressource     string     `json:"ressource,omitempty"`
+	Ressource    string     `json:"ressource,omitempty"`
 	Code         string     `json:"code,omitempty"`
 	Name         string     `json:"name,omitempty"`
 	Description  string     `json:"description,omitempty"`
@@ -36,24 +37,24 @@ type APIChargeData struct {
 		Litecoin    Money `json:"litecoin,omitempty"`
 	} `json:"pricing,omitempty"`
 	Payments []struct {
-		Network string`json:"network,omitepty"`
+		Network        string `json:"network,omitepty"`
 		Transaction_id string `json:"transaction_id,omitepty"`
-		Status string `json:"status,omitepty"`
-		Value struct {
+		Status         string `json:"status,omitepty"`
+		Value          struct {
 			Local struct {
-				Amount string `json:"amount,omitepty"`
+				Amount   string `json:"amount,omitepty"`
 				Currency string `json:"currency,omitepty"`
 			}
 			Crypto struct {
-				Amount string `json:"amount,omitepty"`
+				Amount   string `json:"amount,omitepty"`
 				Currency string `json:"currency,omitepty"`
-			}`json:"crypto,omitepty"`
+			} `json:"crypto,omitepty"`
 		} `json:"value,omitepty"`
 		Block struct {
-			Height int `json:"height,omitepty"`
-			Hash string `json:"hash,omitepty"`
-			Confirmations_accumulated int `json:"confirmations_accumulated ,omitepty"`
-			Confirmations_required int `json:"confirmations_required,omitepty"`
+			Height                    int    `json:"height,omitepty"`
+			Hash                      string `json:"hash,omitepty"`
+			Confirmations_accumulated int    `json:"confirmations_accumulated ,omitepty"`
+			Confirmations_required    int    `json:"confirmations_required,omitepty"`
 		} `json:"block,omitepty"`
 	} `json:"payments,omitempty"`
 	Addresses struct {
@@ -62,7 +63,9 @@ type APIChargeData struct {
 		Ethereum    string `json:"ethereum,omitempty"`
 		Litecoin    string `json:"litecoin,omitempty"`
 	} `json:"addresses,omitempty"`
-	Local_price Money `json:"local_price,omitempty"`
+	Local_price Money  `json:"local_price,omitempty"`
+	RedirectUrl string `json:"redirect_url"`
+	CancelUrl   string `json:"cancel_url"`
 }
 
 // APICharge is the object API object returned by the api routes.
