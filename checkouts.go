@@ -15,7 +15,7 @@ type APICheckoutData struct {
 	Name           string   `json:"name,omitempty"`
 	Description    string   `json:"description,omitempty"`
 	Logo_url       string   `json:"logo_url,omitempty"`
-	Requested_info []string `json:"requested_info,omitempty"`
+	Requested_info []string `json:"requested_info"`
 	Pricing_type   string   `json:"pricing_type,omitempty"`
 	Local_price    Money    `json:"local_price,omitempty"`
 }
