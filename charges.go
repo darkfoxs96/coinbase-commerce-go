@@ -66,6 +66,7 @@ type APIChargeData struct {
 	Local_price Money  `json:"local_price,omitempty"`
 	RedirectUrl string `json:"redirect_url"`
 	CancelUrl   string `json:"cancel_url"`
+	SupportEmail string `json:"support_email"`
 }
 
 // APICharge is the object API object returned by the api routes.
